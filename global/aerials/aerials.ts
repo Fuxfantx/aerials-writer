@@ -21,11 +21,11 @@ export class Node {
 
   public et(easetype: number) {
     this.easetype = easetype
+    return this
   }
 
   public _h(line: number | undefined, x: number, y: number) {
-    _h(line, x, y, this.t)
-    return 
+    return _h(line, x, y, this.t)
   }
   public h(x: number, y: number) {
     return this._h(undefined, x, y)

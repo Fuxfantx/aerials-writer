@@ -9,7 +9,11 @@ export function Loader(basepath: string, savepath: string) {
     for (let index = 0; index < srcls.length; index++) {
       const s = srcls[index];
       const l = index + 1
+
+      // Functions with Line ID
       srclsx.push(s.replaceAll("n(", `_n(${l},`).replaceAll("g(", `_g(${l},`).replaceAll("h(", `_h(${l},`))
+      // 
+      
     }
     let srcx = `
     async () => {

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "adata-workspace",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "adata": "0.301.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "@types/ws": "^8.5.5",
+    "typescript": "^5.1.6"
+  }
+}

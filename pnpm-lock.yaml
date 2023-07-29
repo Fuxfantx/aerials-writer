@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   adata:
-    specifier: 0.310.0
-    version: 0.310.0
+    specifier: 0.350.0
+    version: 0.350.0
   ws:
     specifier: ^8.13.0
     version: 8.13.0
@@ -35,8 +35,8 @@ packages:
       '@types/node': 20.4.5
     dev: true
 
-  /adata@0.310.0:
-    resolution: {integrity: sha512-+GhjREzNjBfXsiONklj7gvfIhdqWaeSfb/U1vc8lIKQTKo0JARBoxPWCb/COlNBJ0VxLEo08DfNWLpq7b46vwg==}
+  /adata@0.350.0:
+    resolution: {integrity: sha512-dRsSCWh5lLNuBY6QLBHgz2qvLJ642woR3rnU5GXgAccwbT1u2PIZ1VggwvI9gmFIFyKlXObwe5ymE9Rv1QwNzA==}
     dev: false
 
   /typescript@5.1.6:

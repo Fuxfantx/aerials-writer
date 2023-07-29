@@ -6,6 +6,7 @@
     "moduleResolution": "NodeNext",
 
     "strict": true,
+    "noImplicitAny": false,
     "allowJs": true,
     "checkJs": true,
 

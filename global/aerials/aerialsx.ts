@@ -5,7 +5,7 @@ export function Loader(basepath: string, savepath: string) {
   return async (name: string) => {
     let src = (await readFile(`${process.cwd()}/${basepath}/${name}`)).toString()
     let srcls = src.split("\n")
-    let srclsx = []
+    let srclsx: string[] = []
     for (let index = 0; index < srcls.length; index++) {
       const s = srcls[index];
       const l = index + 1

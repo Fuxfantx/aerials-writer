@@ -25,7 +25,7 @@ export class Node {
   }
 
   public _h(line: number | undefined, x: number, y: number) {
-    return _h(line, x, y, this.t)
+    return _h(line, x, y, this.t, false)
   }
   public h(x: number, y: number) {
     return this._h(undefined, x, y)
@@ -73,8 +73,21 @@ export const data = {
   groups: <WishGroup[]>[],
   hints: <Hint[]>[]
 }
+type Moder<T = number> = ((v: T) => T)
+export const moder = {
+  time: <Moder | undefined>undefined,
+  note: <{
+    x?: Moder
+    y?: Moder
+    et?: Moder
+  }>{}
+}
 
 export const _n = (line: number | undefined, x: number, y: number, t: number, easetype: number = 0) => {
+  x = moder.note.x?.(x) ?? x
+  y = moder.note.y?.(y) ?? y
+  t = moder.time?.(t) ?? t
+  easetype = moder.note.et?.(easetype) ?? easetype
   return new Node(x, y, t, easetype, line)
 }
 export const n = (x: number, y: number, t: number, easetype: number = 0) => {
@@ -88,7 +101,10 @@ export const _g = (line: number | undefined, zindex: number, ...contains: Node[]
 export const g = (zindex: number, ...contains: Node[]) => {
   return _g(undefined, zindex, ...contains)
 }
-export const _h = (line: number | undefined, x: number, y: number, t: number) => {
+export const _h = (line: number | undefined, x: number, y: number, t: number, mod = true) => {
+  if (mod) {
+    t = moder.time?.(t) ?? t
+  }
   const hint = new Hint(x, y, t, line)
   data.hints.push(hint)
   return hint
@@ -97,9 +113,21 @@ export const h = (x: number, y: number, t: number) => {
   return _h(undefined, x, y, t)
 }
 
+export const set_time_offset = (v: number) => {
+  moder.time = (r) => r + v 
+}
+export const set_nx_offset = (v: number) => {
+  moder.note.x = (r) => r + v 
+}
+export const set_ny_offset = (v: number) => {
+  moder.note.y = (r) => r + v 
+}
+
 export const clear = () => {
   data.groups.length = 0
   data.hints.length = 0
+  moder.time = undefined
+  moder.note = {}
 }
 export const make = () => {
   return {

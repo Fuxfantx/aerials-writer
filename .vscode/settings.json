@@ -1,5 +1,7 @@
 {
     "files.exclude": {
         "node_modules": true
-    }
+    },
+    // "editor.wordWrap": "bounded",
+    "javascript.inlayHints.variableTypes.enabled": false,
 }

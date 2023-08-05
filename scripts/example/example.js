@@ -1,14 +1,11 @@
-const { n, g, h, set_time_offset } = Aerials
-const { e } = Tools
+const env = Aerials.Chart()
+const { g, gn, gnh, h } = env
 
-g(0, n(1, 2, 0), n(1, 2, 0))
-h(1, 2, 0)
+g(1)
+gn(0.5, 0.5, 1000).et(11)
+gnh(1, 0.5, 0.5)
+gn(0.5, 0.5, 1500).et(22)
+gn(0.5, 0.5, 2000).et(33)
 
-e()
-
-set_time_offset(10)
-Aerials.moder.note.x = (v) => 5 - v
-
-g(0, n(1, 2, 0), n(1, 2, 0))
-.n[0].h(1, 2)
-
+h(2, 0.5, 0.5, 3000)
+h(3, 0.5, 0.5, 5000)

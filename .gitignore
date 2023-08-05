@@ -1,4 +1,5 @@
-.build
+.built
 node_modules
 
-data
+output
+schemas/*/gen

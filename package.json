@@ -1,13 +1,14 @@
 {
   "private": true,
-  "name": "adata-workspace",
+  "name": "objscript-workspace",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "tsc -w"
   },
   "dependencies": {
-    "adata": "0.350.0",
+    "@objscript/core": "0.500.0",
+    "@objscript/schema": "0.500.7",
     "ws": "^8.13.0"
   },
   "devDependencies": {

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "types": ["node", "@objscript/core", "@objscript/schema"],
+
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["ESNext"],
@@ -7,6 +9,7 @@
 
     "strict": true,
     "noImplicitAny": false,
+
     "allowJs": true,
     "checkJs": true,
 
@@ -15,8 +18,9 @@
     "sourceMap": true,
     
     "composite": true,
+    "noEmitOnError": false,
 
     "rootDir": "./",
-    "outDir": ".build",
+    "outDir": ".built",
   }
 }

@@ -1,13 +1,24 @@
-import * as Adata from "adata"
+import * as core from "@objscript/core"
 
-await Adata.load_global()
+import { WebSocket, WebSocketServer } from "ws"
 
-const server = Adatax.serve(1357)
+function serve(port: number) {
+  const wss = new WebSocketServer({ port })
+  console.log(`WebSocketServer Start.`)
+  const broadcast_result = async (name: string, data: any) => {
+    wss.clients.forEach(function each(client) {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify([name, data]));
+      }
+    })
+  }
+  return { wss, broadcast_result }
+}
 
-const base = "scripts"
-const save = "./data/"
-Adata.watch(base, {
-  loader: Aerialsx.Loader(base, save),
-  on_result: server.broadcast_result,
-  savepath: save
+await core.init({
+  watch: {
+    savepath: "output",
+    eval: { WithLine: true },
+    onresult: serve(1357).broadcast_result,
+  }
 })

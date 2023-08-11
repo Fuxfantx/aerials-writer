@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "gen": "objsgen",
     "dev": "tsc -w"
   },
   "dependencies": {
-    "@objscript/core": "0.500.0",
-    "@objscript/schema": "0.500.7",
+    "@objscript/core": "0.510.0",
+    "@objscript/schema": "0.510.0",
     "ws": "^8.13.0"
   },
   "devDependencies": {

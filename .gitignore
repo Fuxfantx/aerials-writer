@@ -1,5 +1,5 @@
 .built
 node_modules
 
-output
-schemas/*/gen
+package-lock.json
+pnpm-lock.yaml

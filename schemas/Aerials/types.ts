@@ -3,9 +3,9 @@ import * as Base from "./gen/types.js"
 
 export class NodeHandler extends Base.NodeHandler {
   h(ZIndex: number, X: number, Y: number) {
-    const o = new Base.Hint(ZIndex, X, Y, this.obj.T)
-    const oh = new HintHandler(o, this.env)
-    this.env.r.obj.Hints.push(o)
+    const o = new this.env.Hint(ZIndex, X, Y, this.obj.T)
+    const oh = new this.env.HintHandler(o, this.envref)
+    this.env.obj.Hints.push(o)
     return oh
   }
 }
